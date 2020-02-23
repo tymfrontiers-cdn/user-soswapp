@@ -1,0 +1,13 @@
+{
+  "name" : "tymfrontiers-cdn/user-soswapp",
+  "description" : "User account managment app for 7 OS -Web",
+  "homepage" : "https://github.com/tymfrontiers-cdn/user-soswapp",
+  "support" : {
+    "email" : "dev@tymfrontiers.com",
+    "website" : "https://tymfrontiers.com",
+    "kollabo" : "@tymfrontiers",
+    "twitter" : "@tymfrontiers",
+    "facebook" : "@tymfrontiers",
+    "istagram" : "@tymfrontiers"
+  }
+}

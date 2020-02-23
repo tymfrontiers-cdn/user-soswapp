@@ -1,0 +1,78 @@
+#dash-usr {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: solid 1px #bdc3c7;
+  -webkit-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+#dash-usr #avatar-box {
+  position: relative;
+  margin: 0 auto;
+  width: 220px;
+  height: 220px;
+  -webkit-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+}
+#dash-usr #avatar-box img {
+  width: 100%;
+  height: 100%;
+  padding: 1px;
+  -webkit-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+#dash-usr #avatar-box #avatar-set-btn {
+  margin: 0;
+  float: none;
+  position: absolute;
+  left: 0;
+  bottom: -60px;
+  width: 100%;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+#dash-usr #avatar-box:hover #avatar-set-btn {
+  bottom: 0;
+}
+#dash-usr #avatar-box:hover img {
+  padding: 5px;
+  opacity: 0.8;
+}
+
+#crop-base {
+  position: relative;
+  text-align: center !important;
+  min-height: 280px;
+  background-image: url(../img/upload-file.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#crop-base img.prev-set {
+  width: 100%;
+  height: auto;
+}
+#crop-base #input-trigger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+  margin: 0;
+  float: none;
+}
+#crop-base.engaged #input-trigger {
+  display: none;
+}
+
+/*# sourceMappingURL=user.css.map */

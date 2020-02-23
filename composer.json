@@ -1,0 +1,45 @@
+{
+    "name": "tymfrontiers-cdn/user-soswapp",
+    "description": "User account managment app for 7 OS -Web",
+    "keywords": ["php", "user", "account", "7","seven","os","web","app"],
+    "homepage": "https://github.com/tymfrontiers-cdn/user-soswapp",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ikechukwu Okalia",
+            "email": "me@sirlouis.io"
+        },
+        {
+            "name": "Tym Frontiers Ltd.",
+            "email": "dev@tymfrontiers.com"
+        }
+    ],
+    "require": {
+      "tymfrontiers-cdn/php-data" : ">=0.1@stable",
+      "tymfrontiers-cdn/php-session" : ">=0.1@stable",
+      "tymfrontiers-cdn/php-generic" : ">=0.1@stable",
+      "tymfrontiers-cdn/php-error-log" : ">=0.1@stable",
+      "tymfrontiers-cdn/php-instance-error" : ">=0.1@stable",
+      "tymfrontiers-cdn/php-http-header" : ">=0.1@stable",
+      "tymfrontiers-cdn/php-http-client" : ">=0.1@stable",
+      "tymfrontiers-cdn/php-validator": ">=0.1.0@stable",
+      "tymfrontiers-cdn/php-file": ">=0.1.0@stable",
+      "tymfrontiers-cdn/php-sos-emailer": ">=0.1.0@stable",
+      "tymfrontiers-cdn/php-sos-user": ">=0.1.0@stable",
+      "tymfrontiers-cdn/php-sos-admin": ">=0.1.0@stable",
+      "tymfrontiers-cdn/php-otp": ">=0.1.0@stable",
+      "7os/theme-soswapp" : ">=0.1@stable",
+      "7os/jquery-soswapp" : ">=0.1@stable",
+      "7os/js-generic-soswapp" : ">=0.1@stable",
+      "7os/file-soswapp" : ">=0.1@stable",
+      "7os/plugin-soswapp" : ">=0.1@stable",
+      "7os/font-awesome-soswapp" : ">=0.1@stable"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+          "TymFrontiers\\CDN\\" : "src/"
+        }
+    }
+}
