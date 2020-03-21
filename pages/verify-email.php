@@ -34,7 +34,7 @@ if ($database->query("UPDATE `{$base_db}`.`user` SET status='ACTIVE' WHERE email
   $success = true;
   $session->logout();
 }
-$rdt = !empty($rdt) ? $rdt : WHOST . "/user/login";
+$rdt = !empty($params['rdt']) ? $params['rdt'] : WHOST . "/user/login";
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr" manifest="<?php echo WHOST; ?>/site.webmanifest">
