@@ -75,4 +75,51 @@
   display: none;
 }
 
+.sht-btn {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: solid 1px #9E9E9E;
+  float: none !important;
+  font-size: 0.8em;
+  display: inline-block;
+  margin: 3.5px;
+  padding: 9px;
+  font-weight: normal;
+}
+.sht-btn:hover {
+  background-color: #2196F3;
+  color: white;
+}
+
+#usr-dashlist {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#usr-dashlist li {
+  position: relative;
+  display: inline-block;
+  margin: 8px;
+  text-align: center;
+  width: 180px;
+  height: 180px;
+  padding: 5px;
+}
+#usr-dashlist li h1, #usr-dashlist li h2, #usr-dashlist li h3, #usr-dashlist li h4 {
+  font-weight: lighter;
+  font-size: 1.2em;
+  margin: 3.5px;
+}
+#usr-dashlist li p {
+  margin: 0;
+  font-size: 0.85em;
+}
+
 /*# sourceMappingURL=user.css.map */

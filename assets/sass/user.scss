@@ -33,6 +33,7 @@
     &:hover img{ padding: 5px; opacity: 0.8; }
   }
 }
+
 #crop-base{
   position: relative;
   text-align: center !important;
@@ -61,4 +62,45 @@
   }
   // &:hover #input-trigger{ display: block; }
   &.engaged #input-trigger{ display: none; }
+}
+
+.sht-btn{
+  background-color: transparent;
+  @include no-shadow;
+  @include border-radius(5px);
+  border: solid 1px $grey;
+  float: none !important;
+  font-size: 0.8em;
+  display: inline-block;
+  margin: 3.5px;
+  padding: 9px;
+  font-weight: normal;
+  &:hover{
+    background-color: $blue;
+    color: white;
+  }
+}
+#usr-dashlist{
+  position: relative;
+  list-style: none;
+  margin: 0; padding: 0;
+  li{
+    position: relative;
+    display: inline-block;
+    // float: left;
+    margin: 8px;
+    text-align: center;
+    width: 180px;
+    height: 180px;
+    padding: 5px;
+    h1, h2, h3, h4{
+      font-weight: lighter;
+      font-size: 1.2em;
+      margin:3.5px;
+    }
+    p{
+      margin: 0;
+      font-size: 0.85em;
+    }
+  }
 }
