@@ -37,7 +37,7 @@ if (!$params) HTTP\Header::badRequest(true, "Email/OPT [reference] not supplied,
     <link rel="stylesheet" href="<?php echo \html_style("base.css"); ?>">
   </head>
   <body>
-    <?php \setup_page("user-signin", "user", true, PRJ_HEADER_HEIGHT); ?>
+    <?php \TymFrontiers\Helper\setup_page("user-signin", "user", true, PRJ_HEADER_HEIGHT); ?>
     <?php include PRJ_INC_HEADER; ?>
 
     <section id="main-content">

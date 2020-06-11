@@ -24,7 +24,8 @@ if( !$http_auth && ( empty($post['form']) || empty($post['CSRF_token']) ) ){
 $params = $gen->requestParam(
   [
     "user" =>["user","username",5,12],
-    "name" =>["name","text",5,35],
+    "name" =>["name","name"],
+    "surname" =>["surname","name"],
     "dob" =>[
       "dob",
       "date",
@@ -103,6 +104,7 @@ if (!$user->update()) {
     exit;
   }
 }
+// die($database->last_query);
 foreach ($params as $prop=>$value) {
   if (!empty($value) && \property_exists($session->user,$prop)) $session->user->$prop = $_SESSION['user']->$prop = $value;
 }

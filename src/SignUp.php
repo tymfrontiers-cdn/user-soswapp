@@ -165,8 +165,8 @@ VMSG;
 if (!\file_exists(PRJ_ROOT . "/src/prj-user-welcome.md")) {
 $message = <<<WELCOME
 <header style="border-bottom: solid 5px {$prj_color_primary}; padding: 12px; margin-bottom: 8px;">
-  <a href="{$whost}/user"><img style="max-width:40%; max-height:72px; margin:0 0 3px 3px; float:right" src="{$prj_icon}" alt="Logo"></a>
-  <h1 style="margin: 1.5px; float:left; max-width:58%">{$subject}</h1>
+  <a href="{$whost}/user"><img style="width:auto; height:72px; margin:0 0 3px 3px; float:right" src="{$prj_icon}" alt="Logo"></a>
+  <h1 style="margin: 1.5px">{$subject}</h1>
   <br style="float:none; clear:both; padding:0; margin:0; height:0px;">
 </header>
 <section>

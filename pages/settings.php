@@ -26,7 +26,7 @@ $user = \SOS\User::profile($session->name,'id');
     <link rel="stylesheet" href="<?php echo \html_style("base.min.css"); ?>">
   </head>
   <body>
-    <?php \setup_page('user-setting','user', true); ?>
+    <?php \TymFrontiers\Helper\setup_page('user-setting','user', true); ?>
     <?php include PRJ_INC_HEADER; ?>
     <br class="c-f">
     <section id="main-content">

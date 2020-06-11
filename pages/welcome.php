@@ -25,19 +25,13 @@ use \Michelf\Markdown;
     <link rel="stylesheet" href="<?php echo \html_style("base.css"); ?>">
   </head>
   <body>
-    <?php \setup_page("user", "user", true, PRJ_HEADER_HEIGHT); ?>
+    <?php \TymFrontiers\Helper\setup_page("user", "user", true, PRJ_HEADER_HEIGHT); ?>
     <?php include PRJ_INC_HEADER; ?>
 
     <section id="main-content">
       <div class="view-space">
         <div class="grid-7-tablet">
           <div class="sec-div padding -p20">
-            <p class="align-c color face-primary">
-              <span class="fa-stack fa-3x">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fas fa-shield-alt fa-stack-1x color-text"></i>
-              </span>
-            </p>
             <?php if (\file_exists(PRJ_ROOT . "/src/prj-user-notice.md")) {
               echo Markdown::defaultTransform(\file_get_contents(PRJ_ROOT . "/src/prj-user-notice.md"));
             } ?>

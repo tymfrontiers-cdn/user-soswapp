@@ -5,6 +5,7 @@ use \SOS\User;
 $user = User::profile($session->name);
 $tym = new BetaTym;
 $data = new Data;
+$dashlist = (new MultiForm(MYSQL_BASE_DB, "user_dashlist", "id"))->findAll();
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr" manifest="<?php echo WHOST; ?>/site.webmanifest">
@@ -30,27 +31,35 @@ $data = new Data;
     <!-- Project styling -->
     <link rel="stylesheet" href="<?php echo \html_style("base.min.css"); ?>">
     <link rel="stylesheet" href="<?php echo WHOST . "/user/assets/css/user.min.css"; ?>">
+    <script type="text/javascript">
+      let avatar_param = {
+        type : "image",
+        owner : "<?php echo $session->name; ?>",
+        set_dmn : "<?php echo PRJ_BASE_DOMAIN; ?>",
+        set_as : "USER.AVATAR",
+        set_ttl : "Set as profile avatar",
+        set_cb : "updateAvatar",
+        crp_cb : "updateAvatar",
+        upl_multiple : 0,
+        crp_shape : "square"
+      }
+    </script>
   </head>
   <body>
-    <?php \setup_page("user", "user", true, PRJ_HEADER_HEIGHT); ?>
+
+    <?php \TymFrontiers\Helper\setup_page("user", "user", true, PRJ_HEADER_HEIGHT); ?>
     <?php include PRJ_INC_HEADER; ?>
 
     <section id="main-content">
       <div class="view-space">
-        <div class="grid-12-tablet">
-          <div class="sec-div padding -p20 border -bthin -bbottom color grey">
-            <h1 class="font-3">My dashboard</h1>
-            <p>Welcome to your account dashboard</p>
-          </div>
-        </div>
-        <div class="grid-5-laptop">
+        <div class="grid-4-laptop">
           <div class="sec-div padding -p20" id="dash-usr">
             <div class="grid-5-tablet grid-12-laptop">
               <div class="align-c color face-primary color-bg" id="avatar-box">
                 <a href="<?php echo $session->user->avatar; ?>" data-caption="My profile avatar" data-fancybox="single">
                   <img src="<?php echo $session->user->avatar; ?>" alt="Avatar">
                 </a>
-                <button type="button" onclick="faderBox.url('<?php echo WHOST . "/user/set-image"; ?>',{set_title:'Profile avatar', set_as : 'USER.AVATAR', set_ses_user : 'avatar', aspect_ratio : 'square', color : 'face-primary'},{exitBtn:true});" id="avatar-set-btn" class="sos-btn face-primary"> <i class="fas fa-edit"></i> Change</button>
+                <button type="button" onclick="sos.faderBox.url(location.origin + '/file-manager/uploader-popup', avatar_param, {exitBtn:true});" id="avatar-set-btn" class="sos-btn face-primary"> <i class="fas fa-edit"></i> Change</button>
               </div>
             </div>
             <div class="grid-7-tablet grid-12-laptop">
@@ -82,12 +91,39 @@ $data = new Data;
                     <td><?php echo  "{$user->state}/{$user->country}"; ?></td>
                   </tr>
                 </table>
+                <br class="c-f">
+
+                <button type="button" class="sos-btn sht-btn" name="button" onclick="location.href = '<?php echo WHOST . "/user/settings" ?>'"><i class="fas fa-user-cog"></i> Account setting</button>
+
+                <button type="button" class="sos-btn grey sht-btn" onclick="sos.faderBox.url(location.origin + '/user/view-profile', {user : '<?php echo $user->id; ?>'}, {exitBtn: true});"> <i class="fas fa-user-circle"></i> View full profile</button>
+
+                <button type="button" onclick="sos.faderBox.url(location.origin + '/file-manager/uploader-popup', avatar_param, {exitBtn:true});" id="usr-avatar-set-btn" class="sos-btn sht-btn"> <i class="fas fa-edit"></i> Change profile avatar</button>
               </div>
             </div>
             <br class="c-f">
           </div>
         </div>
-        <div class="grid-7-laptop"></div>
+        <div class="grid-8-laptop">
+          <div class="sec-div padding -p20">
+            <h1>Get started</h1>
+            <p>Tools and links to get you going.</p>
+            <ul id="usr-dashlist">
+            <?php if ($dashlist): foreach($dashlist as $dash): ?>
+              <li>
+                <a href="<?php echo $dash->path; ?>" <?php if(!empty($dash->onclick)) { echo $dash->onclick; } ?> <?php if ( !empty($dash->classname)) { echo "class='{$dash->classname}'"; } ?>>
+                  <span class="fa-stack fa-3x">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fad <?php echo $dash->icon; ?> fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+                <h3><a href="<?php echo $dash->path; ?>" <?php if(!empty($dash->onclick)) { echo $dash->onclick; } ?> <?php if ( !empty($dash->classname)) { echo "class='{$dash->classname}'"; } ?>><?php echo $dash->title; ?></a></h3>
+                <p><?php echo $dash->subtitle; ?></p>
+              </li>
+            <?php endforeach; endif; ?>
+            </ul>
+          </div>
+
+        </div>
 
         <br class="c-f">
       </div>

@@ -34,7 +34,7 @@ if ($database->query("UPDATE `{$base_db}`.`user` SET status='ACTIVE' WHERE email
   $success = true;
   $session->logout();
 }
-$rdt = !empty($params['rdt']) ? $params['rdt'] : WHOST . "/user/login";
+$rdt = !empty($rdt) ? $rdt : WHOST . "/user/login";
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr" manifest="<?php echo WHOST; ?>/site.webmanifest">
@@ -59,7 +59,7 @@ $rdt = !empty($params['rdt']) ? $params['rdt'] : WHOST . "/user/login";
     <link rel="stylesheet" href="<?php echo \html_style("base.css"); ?>">
   </head>
   <body>
-    <?php \setup_page("user-signup", "user", true, PRJ_HEADER_HEIGHT); ?>
+    <?php \TymFrontiers\Helper\setup_page("user-signup", "user", true, PRJ_HEADER_HEIGHT); ?>
     <?php include PRJ_INC_HEADER; ?>
 
     <section id="main-content">
